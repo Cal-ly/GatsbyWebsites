@@ -222,3 +222,83 @@ pre tt:before,
 pre tt:after {
   content: none;
 }
+/* Header and Navbar */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #f8f8f8;
+}
+
+.logo-container img {
+  width: auto; /* Adjust logo size */
+}
+
+.nav-bar ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-bar ul li {
+  margin-right: 1rem;
+}
+
+.nav-bar ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-button {
+  background-color: #0056b3;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  background-color: #003f88;
+}
+
+/* Main Content */
+.main-content {
+  margin-top: 20px; /* Adjust the value as needed */
+  margin-bottom: 20px; /* Adjust the value as needed */
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+/* Footer */
+.main-footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: #f0f0f0;
+  padding: 2rem;
+  border-top: 1px solid #ccc;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 1rem;
+}
+
+.footer-section h3 {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer-note {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #666;
+}

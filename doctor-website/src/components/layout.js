@@ -1,49 +1,50 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
- */
-
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-
-import Header from "./header"
+import { Link } from "gatsby"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
+      <header className="main-header">
+        <div className="logo-container">
+          <img src="images/logo.png" alt="Greve Praksis Logo" className="logo" />
+        </div>
+        <nav className="nav-bar">
+          <ul>
+            <li><Link to="/">Forside</Link></li>
+            <li><Link to="/about">Klinikken</Link></li>
+            <li><Link to="/services">Behandling</Link></li>
+            <li><Link to="/contact">Tidsbestilling</Link></li>
+            <li><Link to="/news">Nyheder</Link></li>
+            <li><button className="nav-button">Akut sygdom</button></li>
+            <li><button className="nav-button">Lægevejen.dk</button></li>
+          </ul>
+        </nav>
+      </header>
+      
+      <main className="main-content">{children}</main>
+      
+      <footer className="main-footer">
+        <div className="footer-section">
+          <h3>Åbningstider</h3>
+          <p>Mandag 8-16<br />Tirsdag 8-16 (Efter 16.00 kun efter aftale)<br />Onsdag 8-16<br />Torsdag 8-16<br />Fredag 8-16 (Ofte med vagt efter kl. 12.00)</p>
+        </div>
+        <div className="footer-section">
+          <h3>Adresse</h3>
+          <p>Centerholmen 18, 2<br />2670 Greve</p>
+        </div>
+        <div className="footer-section">
+          <h3>Telefon</h3>
+          <p>+45 43 90 22 64</p>
+          <h3>Akuttelefon</h3>
+          <p>+45 40 89 56 04<br />Ved akut sygdom mellem 12.00-16.00</p>
+        </div>
+        <div className="footer-section">
+          <h3>E-mail</h3>
+          <p>Alle e-mail konsultationer går gennem www.laegevejen.dk</p>
+        </div>
+        <p className="footer-note">Siden opdateret den 25/02/2024</p>
+      </footer>
     </>
   )
 }
