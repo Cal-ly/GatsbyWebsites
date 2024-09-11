@@ -1,13 +1,15 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import "./layout.css"
+import logo from "../images/logo-no-background.png" // Import the image
 
 const Layout = ({ children }) => {
   return (
     <>
       <header className="main-header">
         <div className="logo-container">
-          <img src="images/logo.png" alt="Greve Praksis Logo" className="logo" />
+          <img src={logo} alt="Logo" />
+          <p>Greve Lægepraksis</p>
         </div>
         <nav className="nav-bar">
           <ul>
@@ -43,7 +45,6 @@ const Layout = ({ children }) => {
           <h3>E-mail</h3>
           <p>Alle e-mail konsultationer går gennem www.laegevejen.dk</p>
         </div>
-        <p className="footer-note">Siden opdateret den 25/02/2024</p>
       </footer>
     </>
   )
